@@ -1,12 +1,11 @@
 import { useEffect, useMemo } from "react";
 import { useRecoilState } from "recoil";
 import { MMKV } from "react-native-mmkv";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { localStorage } from "./localstorage";
 
 type StorageData = Record<string, any>;
 
-const useAsyncStorage = () => {
+const useMMKVStorage = () => {
   const [storedData, setStoredData] = useRecoilState(localStorage);
 
   // Create the storage object using useMemo
@@ -129,4 +128,4 @@ const useAsyncStorage = () => {
   };
 };
 
-export default useAsyncStorage;
+export default useMMKVStorage;
