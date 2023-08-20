@@ -1,12 +1,12 @@
 import { useEffect, useMemo } from "react";
 import { useRecoilState } from "recoil";
 import { MMKV } from "react-native-mmkv";
-import { localStorage } from "./localstorage";
+import { globalStore } from "./globalStore";
 
 type StorageData = Record<string, any>;
 
 const useMMKVStorage = () => {
-  const [storedData, setStoredData] = useRecoilState(localStorage);
+  const [storedData, setStoredData] = useRecoilState(globalStore);
 
   // Create the storage object using useMemo
   const storage = useMemo(() => {

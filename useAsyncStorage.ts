@@ -1,12 +1,12 @@
 import { useEffect, useMemo } from "react";
 import { useRecoilState } from "recoil";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { localStorage } from "./localstorage";
+import { globalStore } from "./globalStore";
 
 type StorageData = Record<string, any>;
 
 const useAsyncStorage = () => {
-  const [storedData, setStoredData] = useRecoilState(localStorage);
+  const [storedData, setStoredData] = useRecoilState(globalStore);
 
   useEffect(() => {
     // Initialize the state with stored data from AsyncStorage
